@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F Lalchawiliana - Designer & Developer</title>
+    <style>
+        :root {
+            --main-bg-color: #051a1a;
+            --accent-color: #0ff5d3;
+            --text-color: #ffffff;
+            --card-bg-color: #071f1f;
+            --dark-bg-gradient: linear-gradient(to bottom, #041515, #062525);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--main-bg-color);
+            color: var(--text-color);
+            background-image: var(--dark-bg-gradient);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header styles */
+        header {
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+        
+        .hamburger {
+            color: var(--accent-color);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .profile-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin-bottom: 40px;
+        }
+        
+        .profile-circle {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: var(--card-bg-color);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 40px var(--accent-color);
+        }
+        
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.85;
+        }
+        
+        .glow-ring {
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 0 20px var(--accent-color);
+            animation: pulse 3s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 20px var(--accent-color); }
+            50% { box-shadow: 0 0 40px var(--accent-color); }
+            100% { box-shadow: 0 0 20px var(--accent-color); }
+        }
+        
+        .hero-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .hero-title {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero-title span {
+            color: var(--accent-color);
+            font-size: 52px;
+        }
+        
+        .hero-subtitle {
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .hero-description {
+            margin-bottom: 30px;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--card-bg-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--accent-color);
+            color: var(--main-bg-color);
+            transform: translateY(-3px);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--main-bg-color);
+            border: none;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 255, 213, 0.3);
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        /* Contact section */
+        .contact {
+            padding: 80px 0;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: var(--card-bg-color);
+            border: 1px solid rgba(0, 255, 213, 0.3);
+            border-radius: 5px;
+            color: var(--text-color);
+            font-size: 16px;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 10px rgba(0, 255, 213, 0.2);
+        }
+        
+        textarea.form-input {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-submit {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .hero-title span {
+                font-size: 38px;
+            }
+            
+            .profile-container {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .timeline::after {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                padding-left: 60px;
+            }
+            
+            .timeline-item::after {
+                left: 23px;
+            }
+            
+            .form-submit {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="container">
+        <div class="logo">F<span>Lalchawiliana</span></div>
+        <div class="hamburger">≡</div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero container">
+        <div class="hero-content">
+            <div class="profile-container">
+                <div class="profile-circle">
+                    <img src="/api/placeholder/400/400" alt="Profile" class="profile-image">
+                    <!-- Note: In a real implementation, you would replace the placeholder with your actual image -->
+                </div>
+                <div class="glow-ring"></div>
+            </div>
+            
+            <h1 class="hero-title">Hi, It's <span>F Lalchawiliana</span></h1>
+            <div class="hero-subtitle">I'm a UI / UX Designer</div>
+            
+            <p class="hero-description">
+                Passionate about creating beautiful, functional, and user-centered digital experiences. 
+                I combine aesthetics with purpose to deliver designs that not only look good but work well.
+            </p>
+            
+            <div class="social-icons">
+                <a href="#" class="social-icon">in</a>
+                <a href="#" class="social-icon">dj</a>
+                <a href="#" class="social-icon">be</a>
+                <a href="#" class="social-icon">tw</a>
+            </div>
+            
+            <div class="cta-buttons">
+                <button class="btn btn-primary">Hire</button>
+                <button class="btn btn-secondary">Contact</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact container">
+        <h2 class="section-title">Contact Me</h2>
+        
+        <div class="contact-form">
+            <div class="form-group">
+                <input type="text" class="form-input" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-input" placeholder="Your Email">
+            </div>
+            <div class="form-group">
+                <textarea class="form-input" placeholder="Your Message"></textarea>
+            </div>
+            <div class="form-submit">
+                <button class="btn btn-primary">Send Message</button>
+                <button class="btn btn-secondary">Download Resume</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="container">
+        <p>© 2025 F Lalchawiliana. All rights reserved.</p>
+    </footer>
+</body>
+</html>
